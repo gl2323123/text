@@ -150,7 +150,7 @@ lecturer_list = [some_lecturer_1, some_lecturer_2, some_lecturer_3]
 
 print(f'Cтуденты:\n\n{student_1}\n\n{student_2}\n\n{student_3}')
 
-print(f'Лекторы:\n\n{some_lecturer_1}\n\n{some_lecturer_2}\n\n{some_lecturer_3}')
+print(f'Лектора:\n\n{some_lecturer_1}\n\n{some_lecturer_2}\n\n{some_lecturer_3}')
 
 print(f'Реверьюверы:\n\n{some_reviewer_1}\n\n{some_reviewer_2}')
 def student_rating(student_list, course_name):
