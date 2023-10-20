@@ -140,12 +140,6 @@ student_3.rate_hw(some_lecturer_3, 'Python', 5)
 student_3.rate_hw(some_lecturer_3, 'Python', 6)
 student_3.rate_hw(some_lecturer_3, 'Python', 7)
 
-print(student_3)
-
-print(some_lecturer_2)
-
-print(some_reviewer_1)
-
 print(student_3>student_1)
 
 print(some_lecturer_2>some_lecturer_1)
@@ -154,6 +148,11 @@ student_list = [student_1, student_2, student_3]
 
 lecturer_list = [some_lecturer_1, some_lecturer_2, some_lecturer_3]
 
+print(f'Cтуденты:\n\n{student_1}\n\n{student_2}\n\n{student_3}')
+
+print(f'Лекторы:\n\n{some_lecturer_1}\n\n{some_lecturer_2}\n\n{some_lecturer_3}')
+
+print(f'Реверьюверы:\n\n{some_reviewer_1}\n\n{some_reviewer_2}')
 def student_rating(student_list, course_name):
     sum_all = 0
     count_all = 0
