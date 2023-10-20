@@ -30,6 +30,9 @@ class Student:
         else:
             return 'Ошибка'
 
+    def __gt__(self, other):
+        return self.average_grades > other.average_grades
+
 class Mentor:
     def __init__(self, name: object, surname: object) -> object:
         self.name = name
@@ -50,8 +53,11 @@ class Lecturer(Mentor):
         self.average_grades = sum(map(sum, self.grades.values())) / grades_count
         result= f'Имя: {self.name}\n' \
             f'Фамилия: {self.surname}\n' \
-            f'Средняя оценка за домашнее задание: {self.average_grades}\n'
+            f'Средняя оценка за лекцию: {self.average_grades}\n'
         return result
+
+    def __gt__(self, other):
+        return self.average_grades > other.average_grades
 
 
 
@@ -139,3 +145,35 @@ print(student_3)
 print(some_lecturer_2)
 
 print(some_reviewer_1)
+
+print(student_3>student_1)
+
+print(some_lecturer_2>some_lecturer_1)
+
+student_list = [student_1, student_2, student_3]
+
+lecturer_list = [some_lecturer_1, some_lecturer_2, some_lecturer_3]
+
+def student_rating(student_list, course_name):
+    sum_all = 0
+    count_all = 0
+    for stud in student_list:
+        if course_name in stud.courses_in_progress:
+            sum_all += stud.average_grades
+            count_all += 1
+    average_for_all = sum_all / count_all
+    return average_for_all
+
+print(f"Средняя оценка для всех студентов по курсу 'Python': {student_rating(student_list, 'Python')}")
+
+def lecturer_rating(lecturer_list, course_name):
+    sum_all = 0
+    count_all = 0
+    for lect in lecturer_list:
+        if lect.courses_attached == [course_name]:
+            sum_all += lect.average_grades
+            count_all += 1
+    average_for_all = sum_all / count_all
+    return average_for_all
+
+print(f"Средняя оценка для всех лекторов по курсу 'Python': {lecturer_rating(lecturer_list, 'Python')}")
